@@ -11,7 +11,7 @@
     flex-grow: 2;
     width: 70%;
     padding: 6rem;
-   z-index: 1;
+    z-index: 1;
 }
 
 .library__header {
@@ -28,13 +28,13 @@
 .schedule {
     flex-grow: 1;
     width: 30%;
-    background: linear-gradient(118.5deg, #6f48CE 0%, #32CBE8 100%)
+    background: linear-gradient(118.95deg, #6F48CE 0%, #32CBE8 100%);
 }
 
 ul {
     list-style-type: none;
     margin: 0 25px;
-    padding: 0px;
+    padding: 0;
     width: 120%;
 }
 
@@ -46,11 +46,15 @@ ul li {
     padding-right: 25px;
 }
 
+
 .course__title {
     color: #4D4D4D;
     font-family: Lato;
     font-size: 16px;
 }
+
+//
+
 
 .course__description {
     width: 60%;
@@ -59,8 +63,30 @@ ul li {
 
 .course__description-title {
     color: #487bce;
-    font-family: Alegrya;
+    font-family: Alegreya;
     font-size: 16px;
     font-weight: bold;
     line-height: 22px;
+}
+
+.slot__course {
+    background-color: white;
+    color: black;
+    border: 1px solid rgba(255,255,255,0.6);
+}
+
+.slot__empty {
+    opacity: 0.75;
+    background-color: transparent;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-style: dashed;
+    color: white;
+}
+
+.show-content {
+    display: block;
+}
+
+.hide-content {
+    display: none;
 }
