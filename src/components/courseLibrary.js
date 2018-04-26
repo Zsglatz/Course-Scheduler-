@@ -1,43 +1,60 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect, dispatch } from 'react-redux';
+import { fetchCourses } from '../actions'
 
 class CourseLibrary extends Component {
 
     constructor(props) {
         super(props)
 
-        this.renderCourse = this.renderCourse.bind(this)
+        this.renderCourse = this.renderCourse.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.fetchCourses()
     }
 
     renderCourse(course) {
         return (
-        <li key={course.title} className='course'> 
-            <div className='courseInfo'>
-                <div className='courseTitle'>
-                    {course.title}
+        <li key={course.title} className="course">
+            <div className="course__info">
+                <div className="course__title-container">
+                    <div className="course__title">{course.title}</div>
                 </div>
             </div>
-            <div className='courseDescription'>
-                <h6 className='courseDescriptionTitle'> Course Description </h6>
-                <p>{course.description} </p>
+            <div className="course__description">
+                <h6 className="course__description-title">Course Description</h6>
+                <p>{course.description}</p>
             </div>
         </li>
         )
     }
 
     render() {
-      return ( 
+        
+        return ( 
+            <ul>
 
-        <ul> 
-            {this.props.course.map(this.renderCourse)}
-        </ul> 
+                {/* {alert(JSON.stringify())} */}
+                {this.props.courses.map(this.renderCourse)}
+            </ul>
+        )
+    }
 
-      )}
 }
+
 
 function mapStateToProps(state) {
-    console.log(`state: ${JSON.stringify(state.courses)}`)
-    return { course: state.courses }
+    console.log(`state courses are : ${JSON.stringify(state.courses)}`)
+    return { courses: state.courses }
 }
 
-export default connect(mapStateToProps)(CourseLibrary)
+function mapDispatchToProps(dispatch) {
+    return {
+        fetchCourses:()=> {
+            dispatch(fetchCourses())
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CourseLibrary);
