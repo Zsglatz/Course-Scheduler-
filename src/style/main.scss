@@ -1,6 +1,18 @@
 @import 'components/schedule';
 @import 'components/courseLibrary';
 
+// 0. add course checkmark styles -- courseLibrary.js
+// 1. add and remove button styles --- courseLibrary.js
+// 2. removeButton style on schedule course -- schedule.js
+// 3. progress tracker component -- progressTracker.js
+// 4. CourseOption component -- courseOption.js
+// 5. EnrolledCourse component -- enrolledCourse.js
+// 6. Refactor our code.
+// 7. Fix styles
+// 8. deploying to heroku.
+
+
+
 .main-container {
     display: flex;
     justify-content: center;
@@ -19,6 +31,8 @@
     left: 0;
 
 }
+
+
 
 .schedule {
     flex-grow: 1;
@@ -60,7 +74,7 @@ ul {
     padding: 0;
     width: 120%;
 }
-
+ 
 ul li {
     margin: 10px 0;
     padding-top: 15px;
